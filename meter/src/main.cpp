@@ -27,6 +27,6 @@ void loop(){
   Serial.println(statusCode);
   Serial.print("Response body from server: ");
   Serial.println(response);
-  analogWrite(OUT, response.toInt());
+  analogWrite(OUT, min(response.toInt(),255));
   delay(5000);
 }
